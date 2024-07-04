@@ -15,10 +15,11 @@ export default function Drawer({ badgeContent, favContent }) {
 
   const navigate = useNavigate();
   const DrawerContainer = styled("Box")({
-    width: "200px",
+    width: "250px",
     height: "300px",
     marginTop: "30px",
     background: "#fff",
+    padding: "15px 0 15px 0",
     position: "fixed",
     borderRadius: "0 5px 5px 0 ",
     top: "10",
@@ -32,7 +33,7 @@ export default function Drawer({ badgeContent, favContent }) {
 
   const DrawerCart = styled("Box")({
     display: "flex",
-    gap: "20px",
+    gap: "25px",
     alignItems: "center",
     padding: "10px",
   });

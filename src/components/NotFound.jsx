@@ -6,6 +6,7 @@ const NotFound = () => {
       display="flex"
       flexDirection="column"
       alignItems="center"
+      textAlign={"center"}
       justifyContent="center"
       height="100vh"
       bgcolor="background.default"
