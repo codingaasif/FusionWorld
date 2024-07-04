@@ -1,0 +1,37 @@
+.main-box {
+  box-shadow: 0px 6px 15px lightblue;
+  height: 300px;
+  margin: 30px 8px 8px 8px;
+  color: #fff;
+  border-radius: 10px;
+  background: #dedaff;
+  color: #39393d;
+}
+.wrap-box {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+}
+.shop-now-text {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  height: 120px;
+}
+.icon-style {
+  font-size: 45px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.icon-style:hover {
+  color: #7568f0;
+}
+.text-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  align-items: center;
+}
