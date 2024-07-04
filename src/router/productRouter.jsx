@@ -119,7 +119,7 @@ const ProductRouter = () => {
         <Route path="/ReviewCard" element={<ReviewCard theme={theme} />} />
         <Route path="/Favorite" element={<Favorite theme={theme} />} />
         <Route path="/Drawer" element={<Drawer />} />
-        <Route path="/*" element={<NotFound />} />
+        <Route element={<NotFound />} />
       </Routes>
     </Box>
   );

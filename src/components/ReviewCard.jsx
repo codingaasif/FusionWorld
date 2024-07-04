@@ -321,12 +321,11 @@ export default function ReviewCard({ theme }) {
             })}
           </CardContainer>
         </Box>
-        {open ||
-          (data?.length > 0 && (
-            <Box sx={{ width: "50%", display: "flex", justifyContent: "end" }}>
-              <PriceDetails totalPrice={totalPrice} />
-            </Box>
-          ))}
+        {open && data?.length > 0 && (
+          <Box sx={{ width: "50%", display: "flex", justifyContent: "end" }}>
+            <PriceDetails totalPrice={totalPrice} />
+          </Box>
+        )}
       </BoxContainer>
     </>
   );

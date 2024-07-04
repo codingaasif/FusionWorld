@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { Box, Typography } from "@mui/material";
-// import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -56,7 +55,7 @@ const MainFooter = () => {
           variant="h6"
           sx={{ fontSize: { xs: "16px" }, fontWeight: "600" }}
         >
-          CEO Aasif Noor.
+          Ownered by Aasif Noor.
         </Typography>
       </Box>
     </Box>
