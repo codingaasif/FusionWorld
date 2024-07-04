@@ -82,7 +82,7 @@ const Dashboard = ({ theme }) => {
   };
 
   const handleOpenProduct = (productId) => {
-    navigate(`/${productId}`);
+    navigate(`/productId/${productId}`);
   };
 
   const searchedData = searched?.length > 0 ? searched : selectorData;

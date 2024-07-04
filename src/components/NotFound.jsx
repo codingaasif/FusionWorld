@@ -13,18 +13,18 @@ const NotFound = () => {
       p={3}
     >
       <Typography variant="h1" gutterBottom>
-        Page NotFound
+        Page Not Found
       </Typography>
       <Typography variant="h2" gutterBottom>
-        Page NotFound
+        Page Not Found
       </Typography>
       <Typography variant="h3" gutterBottom>
-        Page NotFound
+        Page Not Found
       </Typography>
       <Typography variant="h4" gutterBottom>
-        Page NotFound
+        Page Not Found
       </Typography>
-      <Typography variant="h5">Page NotFound</Typography>
+      <Typography variant="h5">Page Not Found</Typography>
     </Box>
   );
 };

@@ -115,11 +115,14 @@ const ProductRouter = () => {
       </Box>
       <Routes>
         <Route path="/" element={<Dashboard theme={theme} />} />
-        <Route path="/:productId" element={<ProductDetails theme={theme} />} />
+        <Route
+          path="/productId/:productId"
+          element={<ProductDetails theme={theme} />}
+        />
         <Route path="/ReviewCard" element={<ReviewCard theme={theme} />} />
         <Route path="/Favorite" element={<Favorite theme={theme} />} />
         <Route path="/Drawer" element={<Drawer />} />
-        <Route element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Box>
   );
