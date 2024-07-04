@@ -160,7 +160,7 @@ export default function PrimaryHeader({ setSearched, state }) {
             <img
               height={"45px"}
               width={"45px"}
-              src="public/favicon/ElectroChic.png"
+              src="favicon/Fusion-shop.png"
               alt="logo"
             />
           </Box>
@@ -175,6 +175,9 @@ export default function PrimaryHeader({ setSearched, state }) {
               display: {
                 lg: "none",
                 cursor: "pointer",
+              },
+              marginRight: {
+                xs: "0px",
               },
             }}
           >
@@ -198,7 +201,7 @@ export default function PrimaryHeader({ setSearched, state }) {
           </Typography>
           <Box
             sx={{
-              display: { xs: "flex", gap: "10px" },
+              display: { xs: "flex", gap: "16px" },
               justifyContent: "center",
               alignItems: "center",
             }}
@@ -208,11 +211,12 @@ export default function PrimaryHeader({ setSearched, state }) {
               noWrap
               component="div"
               sx={{
-                fontSize: { xs: "23px", md: "20px", lg: "30px" },
+                fontSize: { xs: "20px", md: "25px", lg: "30px" },
                 fontStyle: "italic",
+                fontWeight: "600",
               }}
             >
-              ElectroChic
+              FusionShop
             </Typography>
             <Search
               sx={{

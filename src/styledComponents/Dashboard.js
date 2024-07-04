@@ -2,7 +2,7 @@ import { Box, styled, Typography } from "@mui/material";
 import Skeleton from "react-loading-skeleton";
 
 export const CardArea = styled("Card")(({ theme }) => ({
-  margin: "0",
+  marginTop: "30px",
   justifyContent: "center",
   display: "flex",
   alignItems: "center",

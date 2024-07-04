@@ -42,7 +42,7 @@ const MainFooter = () => {
       <Box className="text-box">
         <CopyrightIcon sx={{ fontSize: { xs: "20px", lg: "20px" } }} />
         <Typography variant="h6" sx={{ fontSize: { xs: "16px" } }}>
-          2024 ElectroChic. All Rights Reserved.
+          2024 FusionShop. All Rights Reserved.
         </Typography>
       </Box>
       <Box

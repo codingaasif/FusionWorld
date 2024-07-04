@@ -11,6 +11,7 @@ import { addItems } from "../redux/actions/action";
 import ShareIcon from "@mui/icons-material/Share";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {
   BoxButton,
   BoxContainer,
@@ -23,6 +24,7 @@ import {
   FooterContainer,
 } from "../styledComponents/Dashboard";
 import MainFooter from "./MainFooter";
+import { Carousel } from "react-responsive-carousel";
 
 const Dashboard = ({ theme }) => {
   const dispatch = useDispatch();
@@ -111,6 +113,60 @@ const Dashboard = ({ theme }) => {
           }}
         />
       </Box>
+
+      <Carousel
+        showArrows={true}
+        showThumbs={false}
+        infiniteLoop={true}
+        useKeyboardArrows={true}
+        autoPlay={true}
+        stopOnHover={true}
+        interval={3000}
+        showStatus={false}
+      >
+        <Box>
+          <img
+            src="image/image_1.jpg"
+            alt="Image 1"
+            style={{ width: "100%", height: "70vh" }}
+          />
+        </Box>
+        <Box>
+          <img
+            src="image/image_2.jpg"
+            alt="Image 4"
+            style={{ width: "100%", height: "70vh" }}
+          />
+        </Box>
+        <Box>
+          <img
+            src="image/image_3.jpg"
+            alt="Image 3"
+            style={{ width: "100%", height: "70vh" }}
+          />
+        </Box>
+        <Box>
+          <img
+            src="image/image_4.png"
+            alt="Image 4"
+            style={{ width: "100%", height: "70vh" }}
+          />
+        </Box>
+        <Box>
+          <img
+            src="image/image_5.jpg"
+            alt="Image 4"
+            style={{ width: "100%", height: "70vh" }}
+          />
+        </Box>
+        <Box>
+          <img
+            src="image/image_6.png"
+            alt="Image 4"
+            style={{ width: "100%", height: "70vh" }}
+          />
+        </Box>
+      </Carousel>
 
       <CardArea>
         {searchedData && selectorData?.length > 0 ? (
