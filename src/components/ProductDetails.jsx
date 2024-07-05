@@ -81,7 +81,7 @@ export default function ProductDetails({ theme }) {
           display: "flex",
           justifyContent: "center",
           textAlign: "center",
-          marginTop: "20px",
+          marginTop: "90px",
         }}
       >
         <Card
