@@ -17,7 +17,7 @@ export default function Drawer({ badgeContent, favContent }) {
   const DrawerContainer = styled("Box")({
     width: "250px",
     height: "300px",
-    marginTop: "30px",
+    marginTop: "100px",
     background: "#fff",
     padding: "15px 0 15px 0",
     position: "fixed",
