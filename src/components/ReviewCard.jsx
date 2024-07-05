@@ -174,7 +174,7 @@ export default function ReviewCard({ theme }) {
         }}
       />
 
-      <BoxContainer sx={{ display: "flex", marginTop: "30px" }}>
+      <BoxContainer sx={{ display: "flex", marginTop: "90px" }}>
         <Box sx={{ width: "100%" }}>
           <CardContainer>
             {data?.map((item) => {

@@ -42,7 +42,7 @@ const Favorite = ({ theme }) => {
           transform: "translate(-50%, -50%)",
         }}
       />
-      <CardArea sx={{ gap: "25px" }}>
+      <CardArea sx={{ gap: "25px", marginTop: "90px" }}>
         {favoriteItem?.map((item, index) => (
           <Box key={index}>
             <BoxItems

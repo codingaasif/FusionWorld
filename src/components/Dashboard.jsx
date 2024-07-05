@@ -120,7 +120,7 @@ const Dashboard = ({ theme }) => {
         infiniteLoop={true}
         useKeyboardArrows={true}
         autoPlay={true}
-        stopOnHover={true}
+        stopOnHover={false}
         interval={3000}
         showStatus={false}
       >
