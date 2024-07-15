@@ -5,13 +5,13 @@ const TermsOfUse = () => {
   return (
     <Box>
       <Box sx={{ padding: "30px 0 0 30px" }}>
-        <Typography sx={{ fontSize: "25px" }} variant="h3">
-          FusionShop Terms of Use
+        <Typography sx={{ fontSize: "22px" }} variant="h3">
+          FusionShop Terms of Use.
         </Typography>
       </Box>
       <Box
         sx={{
-          padding: "30px",
+          padding: "15px 30px",
           textAlign: "justify",
           background: "#fff",
           zIndex: 999,

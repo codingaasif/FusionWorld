@@ -16,6 +16,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { Link } from "react-router-dom";
 
 function Registration() {
   const navigate = useNavigate();
@@ -130,7 +131,16 @@ function Registration() {
   };
 
   return (
-    <Container maxWidth="sm" sx={{ padding: "0" }}>
+    <Container
+      maxWidth="sm"
+      sx={{
+        padding: "0",
+        textAlign: "justify",
+        background: "#fff",
+        zIndex: 999,
+        position: "relative",
+      }}
+    >
       <Box sx={{ display: { xs: "block", lg: "none", md: "none" } }}>
         <AppBar position="static">
           <Toolbar variant="dense" sx={{ height: "60px" }}>
@@ -142,14 +152,19 @@ function Registration() {
                 alt="logo"
               />
             </Box>
-            <Typography
-              sx={{ fontWeight: "600", fontFamily: "Roboto" }}
-              variant="h6"
-              color="inherit"
-              component="div"
-            >
-              FusionShop
-            </Typography>
+            <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+              <Typography
+                sx={{ fontWeight: "600", fontFamily: "Roboto" }}
+                variant="h6"
+                color="inherit"
+                component="div"
+              >
+                <Link style={{ textDecoration: "none", color: "#fff" }} to="/">
+                  FusionShop
+                </Link>
+              </Typography>
+              <Typography>Become a Partner</Typography>
+            </Box>
           </Toolbar>
         </AppBar>
       </Box>

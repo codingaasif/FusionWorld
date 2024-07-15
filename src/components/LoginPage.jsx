@@ -80,7 +80,17 @@ const LoginPage = () => {
   };
 
   return (
-    <Container sx={{ padding: "0" }} component="main" maxWidth="xs">
+    <Container
+      sx={{
+        padding: "0",
+        textAlign: "justify",
+        background: "#fff",
+        zIndex: 999,
+        position: "relative",
+      }}
+      component="main"
+      maxWidth="xs"
+    >
       <Box sx={{ display: { xs: "block", lg: "none", md: "none" } }}>
         <AppBar position="static">
           <Toolbar variant="dense" sx={{ height: "60px" }}>
@@ -92,14 +102,19 @@ const LoginPage = () => {
                 alt="logo"
               />
             </Box>
-            <Typography
-              sx={{ fontWeight: "600", fontFamily: "Roboto" }}
-              variant="h5"
-              color="inherit"
-              component="div"
-            >
-              FusionShop
-            </Typography>
+            <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+              <Typography
+                sx={{ fontWeight: "600", fontFamily: "Roboto" }}
+                variant="h6"
+                color="inherit"
+                component="div"
+              >
+                <Link style={{ textDecoration: "none", color: "#fff" }} to="/">
+                  FusionShop
+                </Link>
+              </Typography>
+              <Typography>Become a Partner</Typography>
+            </Box>
           </Toolbar>
         </AppBar>
       </Box>
