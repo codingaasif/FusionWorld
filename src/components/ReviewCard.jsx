@@ -254,7 +254,6 @@ export default function ReviewCard({ theme }) {
                           }}
                           gutterBottom
                           variant="body2"
-                          // color="text.secondary"
                         >
                           {Truncate(item?.description.slice(0, 300))}
                         </Typography>

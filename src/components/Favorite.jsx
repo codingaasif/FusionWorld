@@ -10,25 +10,32 @@ import {
   Typographys,
 } from "../styledComponents/Dashboard";
 import PrimaryHeader from "./PrimaryHeader";
-import { addItems } from "../redux/actions/action";
+import { addItems, removeFavoriteItem } from "../redux/actions/action";
 import { ToastContainer, toast } from "react-toastify";
 
 const Favorite = ({ theme }) => {
   const favoriteItem = useSelector((state) => state?.favoriteItem);
-  const addFavToCart = useSelector((state) => state?.data);
   const dispatch = useDispatch();
+  console.log(favoriteItem, "favoriteItem");
 
   const handleFavToCart = (id) => {
-    const findData = addFavToCart.find((element) => element.id === id);
-    if (findData) {
-      dispatch(addItems(findData));
-    } else {
-      null;
+    const addData = favoriteItem.find((element) => element.id === id);
+    if (addData) {
+      dispatch(addItems(addData));
     }
     toast.success("Item added to cart successfully.", {
       position: "top-center",
       autoClose: 3000,
     });
+  };
+
+  const handleRemoveFavCart = (id) => {
+    const removedData = favoriteItem.filter((element) => element.id !== id);
+    if (removedData) {
+      dispatch(removeFavoriteItem(removedData));
+    } else {
+      null;
+    }
   };
 
   return (
@@ -49,18 +56,26 @@ const Favorite = ({ theme }) => {
               sx={{
                 background: theme ? "#39393D" : "#fff",
                 color: theme ? "#fff" : "#39393D",
+                height: "345px",
               }}
             >
               <ImageDiv src={item.image} alt={item.title} />
               <Typographys>{item.title}</Typographys>
               <h4>${item.price}</h4>
-              <Box sx={{ margin: "0px 25px" }}>
+              <Box sx={{ margin: "0px 25px", display: "flex", gap: "30px" }}>
                 <Button
                   fullWidth
                   variant="contained"
                   onClick={() => handleFavToCart(item.id)}
                 >
                   ADD
+                </Button>
+                <Button
+                  fullWidth
+                  variant="contained"
+                  onClick={() => handleRemoveFavCart(item.id)}
+                >
+                  REMOVE
                 </Button>
               </Box>
             </BoxItems>

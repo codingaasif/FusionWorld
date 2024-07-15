@@ -7,6 +7,9 @@ import { useState } from "react";
 import Favorite from "../components/Favorite";
 import NotFound from "../components/NotFound";
 import Drawer from "../components/Drawer";
+import LoginPage from "../components/LoginPage";
+import TermsOfUse from "../components/TermsOfUse";
+import Registration from "../components/Registration";
 
 const ProductRouter = () => {
   const [theme, setTheme] = useState(false);
@@ -78,7 +81,7 @@ const ProductRouter = () => {
   };
 
   return (
-    <Box style={{ marginTop: "20px" }}>
+    <Box>
       <Box
         sx={{
           display: "flex",
@@ -114,7 +117,10 @@ const ProductRouter = () => {
         />
       </Box>
       <Routes>
-        <Route path="/" element={<Dashboard theme={theme} />} />
+        <Route path="/" element={<LoginPage theme={theme} />} />
+        <Route path="/TermsOfUse" element={<TermsOfUse />} />
+        <Route path="/Registration" element={<Registration theme={theme} />} />
+        <Route path="/Dashboard" element={<Dashboard theme={theme} />} />
         <Route
           path="/productId/:productId"
           element={<ProductDetails theme={theme} />}

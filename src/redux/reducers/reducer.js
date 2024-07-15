@@ -45,9 +45,7 @@ const reducerData = (state = initialState, action) => {
     case "REMOVE_FAVORITE_ITEM":
       return {
         ...state,
-        favoriteItem: state.favoriteItem.filter(
-          (item) => item.id !== action.payload.id
-        ),
+        favoriteItem: action.payload,
       };
     default:
       return state;

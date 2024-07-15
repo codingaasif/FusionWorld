@@ -6,6 +6,8 @@ import {
   FAVORITE_ITEM,
   REMOVE_ITEM,
   ADD_ITEMS,
+  REMOVE_FAVORITE_ITEM,
+  TOGGLE_THEME,
 } from "../actions/actionType";
 
 export const fetchData = () => {
@@ -48,13 +50,12 @@ export const favoriteItem = (items) => {
 
 export const removeFavoriteItem = (items) => {
   return (dispatch) => {
-    dispatch({ type: "REMOVE_FAVORITE_ITEM", payload: items });
+    dispatch({ type: REMOVE_FAVORITE_ITEM, payload: items });
   };
 };
 
 export const toggleTheme = (theme) => {
-  console.log(theme);
   return (dispatch) => {
-    dispatch({ type: "TOGGLE_THEME", payload: theme });
+    dispatch({ type: TOGGLE_THEME, payload: theme });
   };
 };

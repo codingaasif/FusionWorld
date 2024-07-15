@@ -135,7 +135,8 @@ export default function PrimaryHeader({ setSearched, state }) {
   };
 
   const openFavoriteItems = () => {
-    if (favoriteItem?.length > 0) {
+    console.log(favoriteItem, "favoriteItem");
+    if (favoriteItem.length > 0) {
       navigate("/Favorite");
     }
   };

@@ -14,7 +14,7 @@ const MainFooter = () => {
       <Box className="shop-now-text">
         <ShoppingCartIcon sx={{ fontSize: "40px" }} />
         <Typography sx={{ fontWeight: "600" }} variant="h5">
-          Shop Now
+          FusionShop
         </Typography>
       </Box>
       <Box className="wrap-box" sx={{ gap: { xs: "25px", lg: "50px" } }}>

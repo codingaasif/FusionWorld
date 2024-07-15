@@ -4,7 +4,12 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useNavigate } from "react-router";
 import PrimaryHeader from "./PrimaryHeader";
 import { useDispatch, useSelector } from "react-redux";
-import { favoriteItem, fetchData, removeItem } from "../redux/actions/action";
+import {
+  favoriteItem,
+  fetchData,
+  removeFavoriteItem,
+  removeItem,
+} from "../redux/actions/action";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Box, Button } from "@mui/material";
 import { addItems } from "../redux/actions/action";
@@ -33,7 +38,6 @@ const Dashboard = ({ theme }) => {
 
   const navigate = useNavigate();
   const selectorData = useSelector((state) => state?.data);
-
   const items = useSelector((state) => state?.items);
 
   useEffect(() => {
@@ -67,19 +71,17 @@ const Dashboard = ({ theme }) => {
 
   const handleFavoriteBtn = (item) => {
     const isFavorite = state.some((fav) => fav.id === item.id);
-    setState(
-      state.some((add) => add.id === item.id)
-        ? state.filter((add) => add.id !== item.id)
-        : [...state, item]
-    );
-    setState(
-      isFavorite ? state.filter((fav) => fav.id !== item.id) : [...state, item]
-    );
-    const favoriteProduct = selectorData.find(
-      (element) => element.id === item.id
-    );
-    if (favoriteProduct) {
-      dispatch(favoriteItem(favoriteProduct));
+
+    if (isFavorite) {
+      // Remove item from favorite
+      const updateState = state.filter((fav) => fav.id !== item.id);
+      setState(updateState);
+      dispatch(removeFavoriteItem(item));
+    } else {
+      //Add item to favorite
+      const updateState = [...state, item];
+      setState(updateState);
+      dispatch(favoriteItem(item));
     }
   };
 
