@@ -12,11 +12,10 @@ const TermsOfUse = () => {
       <Box
         sx={{
           padding: "30px",
-          marginTop: "30px",
-          //   textAlign: "justify",
-          //   background: "#fff",
-          //   zIndex: 999,
-          //   position: "relative",
+          textAlign: "justify",
+          background: "#fff",
+          zIndex: 999,
+          position: "relative",
         }}
       >
         This document is an electronic record in terms of Information Technology
