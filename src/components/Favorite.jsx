@@ -53,6 +53,7 @@ const Favorite = ({ theme }) => {
         {favoriteItem?.map((item, index) => (
           <Box key={index}>
             <BoxItems
+              data-aos="fade-up"
               sx={{
                 background: theme ? "#39393D" : "#fff",
                 color: theme ? "#fff" : "#39393D",

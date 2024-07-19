@@ -121,7 +121,15 @@ const TermsOfUse = () => {
         on the Platform. . Flipkart is not and cannot be a party to or control
         in any manner any transaction between the Platform's Users.
       </Box>
-      <Box sx={{ paddingRight: "30px", textAlign: "justify" }}>
+      <Box
+        sx={{
+          paddingRight: "30px",
+          textAlign: "justify",
+          background: "#fff",
+          zIndex: 999,
+          position: "relative",
+        }}
+      >
         <ul>
           <li>
             All commercial/contractual terms are offered by and agreed to
@@ -201,7 +209,15 @@ const TermsOfUse = () => {
           </li>
         </ul>
       </Box>
-      <Box sx={{ padding: "30px", textAlign: "justify" }}>
+      <Box
+        sx={{
+          padding: "30px",
+          textAlign: "justify",
+          background: "#fff",
+          zIndex: 999,
+          position: "relative",
+        }}
+      >
         <Typography>
           At Flipkart we are committed towards ensuring that disputes between
           sellers and buyers are settled amicably by way of the above dispute

@@ -182,6 +182,7 @@ export default function ReviewCard({ theme }) {
                 <>
                   <Card
                     key={item.id}
+                    data-aos="fade-up"
                     sx={{
                       maxWidth: 900,
                       boxShadow:
