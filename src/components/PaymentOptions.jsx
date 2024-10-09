@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   TextField,
   Button,
@@ -14,7 +14,7 @@ import {
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const PaymentForm = ({ setModalOpen }) => {
+const PaymentForm = ({ setModalOpen, setShow }) => {
   const currentDate = new Date();
   const currentMonth = currentDate.getMonth() + 1;
   const currentYear = currentDate.getFullYear();
@@ -83,12 +83,41 @@ const PaymentForm = ({ setModalOpen }) => {
     validateCardEndDate(newEndDate);
   };
 
-  const validateCardEndDate = (date) => {
-    const inputDate = new Date(date);
+  useEffect(() => {
+    // Set the initial cardEndDate to the current date in MM/YYYY format
     const currentDate = new Date();
-    if (isNaN(inputDate)) {
-      setErrorMessage("Invalid date format.");
-    } else if (inputDate < currentDate) {
+    const currentMonth = String(currentDate.getMonth() + 1).padStart(2, "0"); // months are 0-based
+    const currentYear = currentDate.getFullYear();
+    setCardEndDate(`${currentMonth}/${currentYear}`);
+  }, []);
+
+  // validateCardEndDate
+  const validateCardEndDate = (date) => {
+    const [month, year] = date.split("/");
+
+    // Basic input validation
+    if (
+      !month ||
+      !year ||
+      isNaN(month) ||
+      isNaN(year) ||
+      month < 1 ||
+      month > 12
+    ) {
+      setErrorMessage("Invalid date format. Please use MM/YYYY.");
+      return;
+    }
+
+    // Format month and year as strings with leading zeros
+    const formattedMonth = month.padStart(2, "0");
+    const formattedYear = year.padStart(4, "0");
+
+    // Create a Date object for comparison
+    const inputDate = new Date(`${formattedYear}-${formattedMonth}-01`);
+    const currentDate = new Date();
+
+    // Check if input date is in the future
+    if (inputDate <= currentDate) {
       setErrorMessage("The card end date must be in the future.");
     } else {
       setErrorMessage("");
@@ -146,15 +175,23 @@ const PaymentForm = ({ setModalOpen }) => {
     ) {
       toast.success("Order successfully placed.");
       setTimeout(() => {
-        setModalOpen(false);
-      }, 6000);
+        if (setModalOpen) {
+          setModalOpen(false);
+        } else {
+          setShow(false);
+        }
+      }, 3000);
     } else {
       toast.error("Please fill all required fields correctly.");
     }
   };
 
   const handleCancelButton = () => {
-    setModalOpen(false);
+    if (setModalOpen) {
+      setModalOpen(false);
+    } else {
+      setShow(false);
+    }
   };
 
   return (
@@ -223,11 +260,11 @@ const PaymentForm = ({ setModalOpen }) => {
                 </Grid>
                 <Grid item xs={6}>
                   <TextField
-                    type="month"
+                    type="text"
                     required
                     fullWidth
                     id="card-end-date"
-                    label="End Date (MM/YY)"
+                    label="Valid (MM/YY)"
                     variant="outlined"
                     value={cardEndDate}
                     onChange={handleCardEndDateChange}

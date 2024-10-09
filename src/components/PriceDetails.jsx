@@ -11,9 +11,9 @@ import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import PaymentModal from "./PaymentModal";
 import { useState } from "react";
 
-const PriceDetails = ({ totalPrice }) => {
+const PriceDetails = ({ totalPrice, theme }) => {
   const initialNewPrice = totalPrice - 5 + 2;
-  const newPrice = totalPrice ? `${initialNewPrice}` : `$0`;
+  const newPrice = totalPrice ? `${initialNewPrice}` : `0`;
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -27,17 +27,17 @@ const PriceDetails = ({ totalPrice }) => {
       "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
     borderRadius: "10px",
     marginTop: {
-      xs: "40px",
+      xs: "55px",
       md: "40px",
       lg: "40px",
     },
     width: {
-      xs: "80%",
+      xs: "84%",
       md: "30%",
       lg: "22%",
     },
     left: {
-      xs: "40px",
+      xs: "30px",
       md: "75%",
       lg: "70%",
     },
@@ -47,12 +47,10 @@ const PriceDetails = ({ totalPrice }) => {
     <Box sx={style}>
       <Card
         sx={{
-          maxWidth: 345,
-          height: {
-            xs: "60vh",
-            md: "60vh",
-            lg: "70vh",
-          },
+          maxWidth: 350,
+          border: "1px solid red",
+          background: theme ? "rgb(198 233 241)" : "#39393D",
+          color: theme ? "#39393D" : "#fff",
         }}
       >
         <CardContent
@@ -69,21 +67,33 @@ const PriceDetails = ({ totalPrice }) => {
           <Typography
             variant="body1"
             color="text.secondary"
-            sx={{ display: "flex", justifyContent: "space-between" }}
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              color: theme ? "#39393D" : "#fff",
+            }}
           >
             Original Price: <strong>${totalPrice}</strong>
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
-            sx={{ display: "flex", justifyContent: "space-between" }}
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              color: theme ? "#39393D" : "#fff",
+            }}
           >
             Coupon Discount: <strong style={{ color: "	#fb4918" }}>$5</strong>
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
-            sx={{ display: "flex", justifyContent: "space-between" }}
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              color: theme ? "#39393D" : "#fff",
+            }}
           >
             Delivery Charges: <strong>$2</strong>
           </Typography>
@@ -121,12 +131,15 @@ const PriceDetails = ({ totalPrice }) => {
               marginTop: "12px",
               marginBottom: {
                 xs: "15px",
-                md: "100px",
               },
             }}
           >
             <VerifiedUserIcon />
-            <Typography variant="body2" color="text.secondary">
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{ color: theme ? "#39393D" : "#fff" }}
+            >
               Safe and Secure Payments. Easy to returns 100% Authentic Products.
             </Typography>
           </Box>

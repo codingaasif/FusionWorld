@@ -33,25 +33,36 @@ const style1 = {
   fontSize: "20px",
 };
 
-export default function PaymentModal({ modalOpen, setModalOpen, newPrice }) {
+export default function PaymentModal({
+  modalOpen,
+  setModalOpen,
+  newPrice,
+  show,
+  setShow,
+  price,
+}) {
   const handleCloseModal = () => {
-    setModalOpen(false);
+    if (modalOpen) {
+      setModalOpen(false);
+    } else {
+      setShow(false);
+    }
   };
 
   return (
     <Box sx={{ width: { xs: "75%", md: "50%" } }}>
       <Modal
-        open={modalOpen}
+        open={modalOpen || show}
         onClose={handleCloseModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
           <Typography id="modal-modal-description" sx={style1}>
-            Payable Amount: ${newPrice}
+            Payable Amount: ${`${newPrice ? newPrice : price}`}
           </Typography>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            <PaymentOptions setModalOpen={setModalOpen} />
+            <PaymentOptions setModalOpen={setModalOpen} setShow={setShow} />
           </Typography>
         </Box>
       </Modal>

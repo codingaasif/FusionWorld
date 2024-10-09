@@ -21,7 +21,6 @@ import { Link } from "react-router-dom";
 function Registration() {
   const navigate = useNavigate();
   const [showPassword1, setShowPassword1] = useState(false);
-  const [showPassword2, setShowPassword2] = useState(false);
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -102,8 +101,8 @@ function Registration() {
   // handle submit
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (formData.email && formData.password) {
-      console.log("Form submitted:", formData);
       setFormData({
         firstName: "",
         lastName: "",
@@ -118,16 +117,13 @@ function Registration() {
         password: "",
         confirmPassword: "",
       });
+      localStorage.setItem("userData", JSON.stringify(formData));
       navigate("/Dashboard");
     }
-    console.log("Form submitted:", formData);
   };
 
   const handleClickShowPassword1 = () => {
     setShowPassword1(!showPassword1);
-  };
-  const handleClickShowPassword2 = () => {
-    setShowPassword2(!showPassword2);
   };
 
   return (
@@ -148,7 +144,7 @@ function Registration() {
               <img
                 height={"50px"}
                 width={"50px"}
-                src="favicon/Fusion-shop.png"
+                src="favicon/FusionWorld_Logo.png"
                 alt="logo"
               />
             </Box>
@@ -160,7 +156,7 @@ function Registration() {
                 component="div"
               >
                 <Link style={{ textDecoration: "none", color: "#fff" }} to="/">
-                  FusionShop
+                  FusionWorld
                 </Link>
               </Typography>
               <Typography>Become a Partner</Typography>
@@ -250,7 +246,7 @@ function Registration() {
           <TextField
             label="Confirm Password"
             name="confirmPassword"
-            type={showPassword2 ? "Text" : "confirmPassword"}
+            type="password"
             value={formData.confirmPassword}
             onChange={handleOnChange}
             fullWidth
@@ -258,26 +254,15 @@ function Registration() {
             required
             error={!!errors.confirmPassword}
             helperText={errors.confirmPassword}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword2}
-                    edge="end"
-                  >
-                    {showPassword2 ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
           />
           <Box
             sx={{
               color: "rgba(0, 0, 0, 0.77)",
             }}
           >
-            <Typography sx={{ mt: 1, fontFamily: "Roboto", fontSize: "18px" }}>
+            <Typography
+              sx={{ mt: 1, fontFamily: "Roboto, sans-serif", fontSize: "16px" }}
+            >
               “Password must be at least 8 characters.”
             </Typography>
           </Box>

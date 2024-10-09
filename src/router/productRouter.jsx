@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router";
+import { Route, Routes, useNavigate } from "react-router";
 import Dashboard from "../components/Dashboard";
 import ReviewCard from "../components/ReviewCard";
 import ProductDetails from "../components/ProductDetails";
@@ -10,9 +10,12 @@ import Drawer from "../components/Drawer";
 import LoginPage from "../components/LoginPage";
 import TermsOfUse from "../components/TermsOfUse";
 import Registration from "../components/Registration";
+import ProtectedRoute from "../components/ProtectedRoute";
+import HelpSupport from "../components/HelpSupport";
 
 const ProductRouter = () => {
   const [theme, setTheme] = useState(false);
+  const navigate = useNavigate();
 
   const handleToggleMode = () => {
     setTheme((prevTheme) => !prevTheme);
@@ -28,6 +31,7 @@ const ProductRouter = () => {
     width: 42,
     height: 26,
     padding: 0,
+    border: "1px solid red",
 
     "& .MuiSwitch-switchBase": {
       padding: 0,
@@ -78,7 +82,28 @@ const ProductRouter = () => {
     top: "65px",
     zIndex: "1",
     right: "15px",
+    display: { xs: "none" },
   };
+
+  // const handleBackFunc = () => {
+  //   const forbiddenPaths = ["/", "/Registration"];
+  //   const handleBack = () => {
+  //     const previousPath = window.location.pathname;
+
+  //     if (forbiddenPaths.includes(previousPath)) {
+  //       navigate("/Dashbard");
+  //     } else {
+  //       navigate(-1);
+  //       setTimeout(() => {
+  //         const newPath = window.location.pathname;
+  //         if (forbiddenPaths.includes(newPath)) {
+  //           navigate("/Dashboard");
+  //         }
+  //       }, 0);
+  //     }
+  //   };
+  //   handleBack();
+  // };
 
   return (
     <Box>
@@ -99,8 +124,9 @@ const ProductRouter = () => {
               margin: {
                 xs: "6px",
               },
+              display: { xs: "none" },
             }}
-            onClick={() => window.history.back()}
+            onClick={() => navigate(-1)}
           >
             Back
           </Button>
@@ -118,16 +144,30 @@ const ProductRouter = () => {
       </Box>
       <Routes>
         <Route path="/" element={<LoginPage theme={theme} />} />
-        <Route path="/TermsOfUse" element={<TermsOfUse />} />
+        <Route
+          path="/TermsOfUse"
+          element={<ProtectedRoute Component={TermsOfUse} />}
+        />
         <Route path="/Registration" element={<Registration theme={theme} />} />
-        <Route path="/Dashboard" element={<Dashboard theme={theme} />} />
+        <Route
+          path="/Dashboard"
+          element={<ProtectedRoute Component={Dashboard} theme={theme} />}
+        />
         <Route
           path="/productId/:productId"
-          element={<ProductDetails theme={theme} />}
+          element={<ProtectedRoute Component={ProductDetails} theme={theme} />}
         />
-        <Route path="/ReviewCard" element={<ReviewCard theme={theme} />} />
-        <Route path="/Favorite" element={<Favorite theme={theme} />} />
-        <Route path="/Drawer" element={<Drawer />} />
+        <Route
+          path="/ReviewCard"
+          element={<ProtectedRoute Component={ReviewCard} theme={theme} />}
+        />
+        <Route
+          path="/Favorite"
+          element={<ProtectedRoute Component={Favorite} theme={theme} />}
+        />
+        <Route path="/Drawer" element={<ProtectedRoute Component={Drawer} />} />
+        <Route path="/HelpSupport" element={<HelpSupport theme={theme} />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Box>

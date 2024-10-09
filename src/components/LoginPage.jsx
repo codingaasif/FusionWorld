@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import {
@@ -6,9 +7,9 @@ import {
   TextField,
   Button,
   Typography,
-  Avatar,
+  // Avatar,
 } from "@mui/material";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+// import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { Link, useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -17,21 +18,30 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-const LoginPage = () => {
+// eslint-disable-next-line no-unused-vars
+const LoginPage = ({ theme }) => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
+  const [errorLogged, setErrorLogged] = useState("");
+  // console.log(theme)
 
   const navigate = useNavigate();
 
   // handle Submit
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (formData.email && formData.password) {
-      console.log("Form submitted:", formData);
+    const getLocalStorageData = JSON.parse(localStorage.getItem("userData"));
+    if (
+      formData.email === getLocalStorageData.email &&
+      formData.password === getLocalStorageData.password
+    ) {
+      setErrorLogged("");
       setFormData({ email: "", password: "" });
       setErrors({ email: "", password: "" });
       navigate("/Dashboard");
+    } else {
+      setErrorLogged("Invalid email or password.");
     }
   };
 
@@ -79,6 +89,18 @@ const LoginPage = () => {
     navigate("/Registration");
   };
 
+  const backgroundImageStyle = {
+    backgroundImage: "url(image/asif_image.png)",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: "200px",
+    width: "200px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+  };
+
   return (
     <Container
       sx={{
@@ -98,7 +120,7 @@ const LoginPage = () => {
               <img
                 height={"50px"}
                 width={"50px"}
-                src="favicon/Fusion-shop.png"
+                src="favicon/FusionWorld_Logo.png"
                 alt="logo"
               />
             </Box>
@@ -110,7 +132,7 @@ const LoginPage = () => {
                 component="div"
               >
                 <Link style={{ textDecoration: "none", color: "#fff" }} to="/">
-                  FusionShop
+                  FusionWorld
                 </Link>
               </Typography>
               <Typography>Become a Partner</Typography>
@@ -127,12 +149,14 @@ const LoginPage = () => {
           padding: "0 25px",
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
-        </Typography>
+        <div style={backgroundImageStyle}>
+          {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main", marginTop: "100px" }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography> */}
+        </div>
         <form onSubmit={handleSubmit}>
           <TextField
             margin="normal"
@@ -175,13 +199,31 @@ const LoginPage = () => {
               ),
             }}
           />
+          <p style={{ color: "red", fontFamily: "Roboto, sans-serif" }}>
+            {" "}
+            {errorLogged}{" "}
+          </p>
+          <p
+            style={{
+              fontFamily: "Roboto, sans-serif",
+              fontSize: "14px",
+              textAlign: "center",
+            }}
+          >
+            {" "}
+            “If you are already user, please Sign In; otherwise, Sign Up.”
+          </p>
           <Typography sx={{ textAlign: "center", fontSize: "14px" }}>
             By continuing, you agree to
             <Link
-              style={{ padding: "0 5px", textDecoration: "none" }}
+              style={{
+                padding: "0 5px",
+                textDecoration: "none",
+                fontWeight: "600",
+              }}
               to={"/TermsOfUse"}
             >
-              FusionShop's
+              FusionWorld's
             </Link>
             Terms of Use and Privacy Policy.
           </Typography>

@@ -6,7 +6,7 @@ const TermsOfUse = () => {
     <Box>
       <Box sx={{ padding: "30px 0 0 30px" }}>
         <Typography sx={{ fontSize: "22px" }} variant="h3">
-          FusionShop Terms of Use.
+          FusionWorld Terms of Use.
         </Typography>
       </Box>
       <Box
@@ -27,9 +27,9 @@ const TermsOfUse = () => {
         of Rule 3 (1) of the Information Technology (Intermediaries guidelines)
         Rules, 2011 that require publishing the rules and regulations, privacy
         policy and Terms of Use for access or usage of domain name
-        [www.flipkart.com] (“Website”), including the related mobile site and
+        [www.FusionWorld.com] (“Website”), including the related mobile site and
         mobile application (hereinafter referred to as “Platform”) The Platform
-        is owned by Flipkart Internet Private Limited, a company incorporated
+        is owned by FusionWorld Internet Private Limited, a company incorporated
         under the Companies Act, 1956 with its registered office at Buildings
         Alyssa, Begonia & Clover, Embassy Tech Village, Outer Ring Road,
         Devarabeesanahalli Village, Bengaluru – 560103, Karnataka, India and its
@@ -37,41 +37,41 @@ const TermsOfUse = () => {
         Outer Ring Road, Devarabeesanahalli Village, Bengaluru-560103,
         Karnataka, India and; 447/C, 12th Main, 4th Block, Koramangala,
         Bengaluru-560034, Karnataka, India (hereinafter referred to as
-        "Flipkart"). Your use of the Platform and services and tools are
+        "FusionWorld"). Your use of the Platform and services and tools are
         governed by the following terms and conditions ("Terms of Use") as
         applicable to the Platform including the applicable policies which are
         incorporated herein by way of reference. If You transact on the
         Platform, You shall be subject to the policies that are applicable to
         the Platform for such transaction. By mere use of the Platform, You
-        shall be contracting with Flipkart Internet Private Limited and these
+        shall be contracting with FusionWorld Internet Private Limited and these
         terms and conditions including the policies constitute Your binding
-        obligations, with Flipkart. For the purpose of these Terms of Use,
+        obligations, with FusionWorld. For the purpose of these Terms of Use,
         wherever the context so requires "You" or "User" shall mean any natural
         or legal person who has agreed to become a buyer on the Platform by
         providing Registration Data while registering on the Platform as
-        Registered User using the computer systems. Flipkart allows the User to
-        surf the Platform or making purchases without registering on the
-        Platform. The term "We", "Us", "Our" shall mean Flipkart Internet
+        Registered User using the computer systems. FusionWorld allows the User
+        to surf the Platform or making purchases without registering on the
+        Platform. The term "We", "Us", "Our" shall mean FusionWorld Internet
         Private Limited. ACCESSING, BROWSING OR OTHERWISE USING THE SITE
         INDICATES YOUR AGREEMENT TO ALL THE TERMS AND CONDITIONS UNDER THESE
         TERMS OF USE, SO PLEASE READ THE TERMS OF USE CAREFULLY BEFORE
         PROCEEDING. By impliedly or expressly accepting these Terms of Use, You
-        also accept and agree to be bound by Flipkart Policies ((including but
-        not limited to Privacy Policy available at Privacy) as amended from time
-        to time. Membership Eligibility Transaction on the Platform is available
-        only to persons who can form legally binding contracts under Indian
-        Contract Act, 1872. Persons who are "incompetent to contract" within the
-        meaning of the Indian Contract Act, 1872 including un-discharged
-        insolvents etc. are not eligible to use the Platform. If you are a minor
-        i.e. under the age of 18 years, you may use the Platform or access
-        content on the Platform only under the supervision and prior consent/
-        permission of a parent or legal guardian. As a minor if you wish to
-        transact on the Platform, such transaction on the Platform may be made
-        by your legal guardian or parents. Flipkart reserves the right to
-        terminate your membership and / or refuse to provide you with access to
-        the Platform if it is brought to Flipkart's notice or if it is
-        discovered that You are under the age of 18 years and transacting on the
-        Platform. Your Account and Registration Obligations If You use the
+        also accept and agree to be bound by FusionWorld Policies ((including
+        but not limited to Privacy Policy available at Privacy) as amended from
+        time to time. Membership Eligibility Transaction on the Platform is
+        available only to persons who can form legally binding contracts under
+        Indian Contract Act, 1872. Persons who are "incompetent to contract"
+        within the meaning of the Indian Contract Act, 1872 including
+        un-discharged insolvents etc. are not eligible to use the Platform. If
+        you are a minor i.e. under the age of 18 years, you may use the Platform
+        or access content on the Platform only under the supervision and prior
+        consent/ permission of a parent or legal guardian. As a minor if you
+        wish to transact on the Platform, such transaction on the Platform may
+        be made by your legal guardian or parents. FusionWorld reserves the
+        right to terminate your membership and / or refuse to provide you with
+        access to the Platform if it is brought to FusionWorld's notice or if it
+        is discovered that You are under the age of 18 years and transacting on
+        the Platform. Your Account and Registration Obligations If You use the
         Platform, You shall be responsible for maintaining the confidentiality
         of your Display Name and Password and You shall be responsible for all
         activities that occur under your Display Name and Password. You agree
@@ -87,7 +87,7 @@ const TermsOfUse = () => {
         Platform at all times. You agree to notify Us promptly if your mobile
         phone number or e-mail address changes by updating the same on the
         Platform through a onetime password verification. You agree that
-        Flipkart shall not be liable or responsible for the activities or
+        FusionWorld shall not be liable or responsible for the activities or
         consequences of use or misuse of any information that occurs under your
         Account in cases, including, where You have failed to update Your
         revised mobile phone number and/or e-mail address on the Website
@@ -101,25 +101,26 @@ const TermsOfUse = () => {
         your login details, ie, username and password of Your account with any
         other person, else it would be considered breach of this Terms of Use.
         You agree to: (a) ensure that You successfully log out from Your account
-        at the end of each session; and (b) immediately notify Flipkart of any
-        unauthorized use of Your account. If there is reason to believe that
+        at the end of each session; and (b) immediately notify FusionWorld of
+        any unauthorized use of Your account. If there is reason to believe that
         there is likely to be a breach of security or misuse of Your account, We
         may request You to change the password or we may suspend Your account
-        without any liability to Flipkart, for such period of time as we deem
+        without any liability to FusionWorld, for such period of time as we deem
         appropriate in the circumstances. We shall not be liable for any loss or
         damage arising from Your failure to comply with this provision. You will
-        have access to other apps owned by Flipkart group companies through the
-        same login username and password. You agree to have single login access
-        to all the apps owned by Flipkart group companies. Communications When
-        You use the Platform or send emails or other data, information or
-        communication to us, You agree and understand that You are communicating
-        with Us through electronic records and You consent to receive
-        communications via electronic records from Us periodically and as and
-        when required. We may communicate with you by email or by such other
-        mode of communication, electronic or otherwise. Platform for Transaction
-        and Communication The Platform enables the Buyer and Seller to transact
-        on the Platform. . Flipkart is not and cannot be a party to or control
-        in any manner any transaction between the Platform's Users.
+        have access to other apps owned by FusionWorld group companies through
+        the same login username and password. You agree to have single login
+        access to all the apps owned by FusionWorld group companies.
+        Communications When You use the Platform or send emails or other data,
+        information or communication to us, You agree and understand that You
+        are communicating with Us through electronic records and You consent to
+        receive communications via electronic records from Us periodically and
+        as and when required. We may communicate with you by email or by such
+        other mode of communication, electronic or otherwise. Platform for
+        Transaction and Communication The Platform enables the Buyer and Seller
+        to transact on the Platform. . FusionWorld is not and cannot be a party
+        to or control in any manner any transaction between the Platform's
+        Users.
       </Box>
       <Box
         sx={{
@@ -137,11 +138,11 @@ const TermsOfUse = () => {
             include without limitation price, shipping costs, payment methods,
             payment terms, date, period and mode of delivery, warranties related
             to products and services and after sales services related to
-            products and services. Flipkart does not have any control or does
+            products and services. FusionWorld does not have any control or does
             not determine or advise or in any way involve itself in the offering
             or acceptance of such commercial/contractual terms between the
             Buyers and Sellers. All discounts, offers (including exchange
-            offers) are by the Seller/Brand and not by Flipkart.
+            offers) are by the Seller/Brand and not by FusionWorld.
           </li>
           <li>
             Placement of order by a Buyer with Seller on the Platform is an
@@ -162,50 +163,51 @@ const TermsOfUse = () => {
             individual to individual.
           </li>
           <li>
-            Flipkart does not make any representation or Warranty as to
+            FusionWorld does not make any representation or Warranty as to
             specifics (such as quality, value, salability, etc) of the products
             or services proposed to be sold or offered to be sold or purchased
-            on the Platform. Flipkart does not implicitly or explicitly support
-            or endorse the sale or purchase of any products or services on the
-            Platform. Flipkart accepts no liability for any errors or omissions,
-            whether on behalf of itself or third parties.
+            on the Platform. FusionWorld does not implicitly or explicitly
+            support or endorse the sale or purchase of any products or services
+            on the Platform. FusionWorld accepts no liability for any errors or
+            omissions, whether on behalf of itself or third parties.
           </li>
           <li>
-            Flipkart is not responsible for any non-performance or breach of any
-            contract entered into between Buyers and Sellers. Flipkart cannot
-            and does not guarantee that the concerned Buyers and/or Sellers will
-            perform any transaction concluded on the Platform. Flipkart shall
-            not and is not required to mediate or resolve any dispute or
-            disagreement between Buyers and Sellers.
+            FusionWorld is not responsible for any non-performance or breach of
+            any contract entered into between Buyers and Sellers. FusionWorld
+            cannot and does not guarantee that the concerned Buyers and/or
+            Sellers will perform any transaction concluded on the Platform.
+            FusionWorld shall not and is not required to mediate or resolve any
+            dispute or disagreement between Buyers and Sellers.
           </li>
           <li>
-            Flipkart does not make any representation or warranty as to the
+            FusionWorld does not make any representation or warranty as to the
             item-specifics (such as legal title, creditworthiness, identity,
             etc) of any of its Users. You are advised to independently verify
             the bona fides of any particular User that You choose to deal with
             on the Platform and use Your best judgment in that behalf.
           </li>
           <li>
-            Flipkart does not at any point of time during any transaction
+            FusionWorld does not at any point of time during any transaction
             between Buyer and Seller on the Platform come into or take
             possession of any of the products or services offered by Seller nor
             does it at any point gain title to or have any rights or claims over
             the products or services offered by Seller to Buyer.
           </li>
           <li>
-            At no time shall Flipkart hold any right, title or interest over the
-            products nor shall Flipkart have any obligations or liabilities in
-            respect of such contract entered into between Buyers and Sellers.
-            Flipkart is not responsible for unsatisfactory or delayed
-            performance of services or damages or delays as a result of products
-            which are out of stock, unavailable or back ordered.
+            At no time shall FusionWorld hold any right, title or interest over
+            the products nor shall FusionWorld have any obligations or
+            liabilities in respect of such contract entered into between Buyers
+            and Sellers. FusionWorld is not responsible for unsatisfactory or
+            delayed performance of services or damages or delays as a result of
+            products which are out of stock, unavailable or back ordered.
           </li>
           <li>
             The Platform is only a platform that can be utilized by Users to
-            reach a larger base to buy and sell products or services. Flipkart
-            is only providing a platform for communication and it is agreed that
-            the contract for sale of any of the products or services shall be a
-            strictly bipartite contract between the Seller and the Buyer.
+            reach a larger base to buy and sell products or services.
+            FusionWorld is only providing a platform for communication and it is
+            agreed that the contract for sale of any of the products or services
+            shall be a strictly bipartite contract between the Seller and the
+            Buyer.
           </li>
         </ul>
       </Box>
@@ -219,14 +221,14 @@ const TermsOfUse = () => {
         }}
       >
         <Typography>
-          At Flipkart we are committed towards ensuring that disputes between
+          At FusionWorld we are committed towards ensuring that disputes between
           sellers and buyers are settled amicably by way of the above dispute
           resolution mechanisms and procedures. However, in the event that a
           buyer wishes to contact the seller, he/ she may proceed to do so by
           accessing the seller related information made available by the sellers
           on their product listing pages. Alternatively, the buyers may also
           reach out to customer support at 044-45614700 or access help center at
-          https://www.fusionshop.com/helpcentre.
+          https://www.FusionWorld.com/helpcentre.
         </Typography>
       </Box>
     </Box>

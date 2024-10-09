@@ -17,6 +17,8 @@ import ShareIcon from "@mui/icons-material/Share";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 import {
   BoxButton,
   BoxContainer,
@@ -30,11 +32,15 @@ import {
 } from "../styledComponents/Dashboard";
 import MainFooter from "./MainFooter";
 import { Carousel } from "react-responsive-carousel";
+import PaymentModal from "./PaymentModal";
 
 const Dashboard = ({ theme }) => {
   const dispatch = useDispatch();
   const [state, setState] = useState([]);
   const [searched, setSearched] = useState([]);
+  const [show, setShow] = useState(false);
+  const [price, setPrice] = useState("");
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
 
   const navigate = useNavigate();
   const selectorData = useSelector((state) => state?.data);
@@ -95,9 +101,16 @@ const Dashboard = ({ theme }) => {
     prompt("Do you want to share it");
   };
 
+  const handleBuyItem = (itemPrice) => {
+    setPrice(itemPrice);
+    setShow(true);
+  };
+
   return (
     <>
       <PrimaryHeader setSearched={setSearched} state={state} />
+      {show && <PaymentModal show={show} setShow={setShow} price={price} />}
+
       <Box
         sx={{
           display: "flex",
@@ -115,7 +128,7 @@ const Dashboard = ({ theme }) => {
           }}
         />
       </Box>
-
+      {/* Dashboard Carousel */}
       <Carousel
         showArrows={true}
         showThumbs={false}
@@ -130,46 +143,47 @@ const Dashboard = ({ theme }) => {
           <img
             src="image/image_1.jpg"
             alt="Image 1"
-            style={{ width: "100%", height: "70vh" }}
+            style={{ width: "100%", height: isSmallScreen ? "40vh" : "70vh" }}
           />
         </Box>
         <Box>
           <img
             src="image/image_2.jpg"
             alt="Image 4"
-            style={{ width: "100%", height: "70vh" }}
+            style={{ width: "100%", height: isSmallScreen ? "40vh" : "70vh" }}
           />
         </Box>
         <Box>
           <img
             src="image/image_3.jpg"
             alt="Image 3"
-            style={{ width: "100%", height: "70vh" }}
+            style={{ width: "100%", height: isSmallScreen ? "40vh" : "70vh" }}
           />
         </Box>
         <Box>
           <img
             src="image/image_4.png"
             alt="Image 4"
-            style={{ width: "100%", height: "70vh" }}
+            style={{ width: "100%", height: isSmallScreen ? "40vh" : "70vh" }}
           />
         </Box>
         <Box>
           <img
             src="image/image_5.jpg"
             alt="Image 4"
-            style={{ width: "100%", height: "70vh" }}
+            style={{ width: "100%", height: isSmallScreen ? "40vh" : "70vh" }}
           />
         </Box>
         <Box>
           <img
             src="image/image_6.png"
             alt="Image 4"
-            style={{ width: "100%", height: "70vh" }}
+            style={{ width: "100%", height: isSmallScreen ? "40vh" : "70vh" }}
           />
         </Box>
       </Carousel>
 
+      {/* Dashboard cart items */}
       <CardArea>
         {searchedData && selectorData?.length > 0 ? (
           <BoxContainer
@@ -194,23 +208,32 @@ const Dashboard = ({ theme }) => {
                   <Typographys>{item.title}</Typographys>
                   <h4>${item.price}</h4>
                   <Box sx={{ margin: "0px 25px" }}>
-                    {items.some((add) => add.id === item.id) ? (
+                    <Box sx={{ display: "flex", gap: "25px" }}>
                       <Button
                         fullWidth
                         variant="contained"
-                        onClick={() => handleRemoveItem(item.id)}
+                        onClick={() => handleBuyItem(item.price)}
                       >
-                        REMOVE
+                        Buy
                       </Button>
-                    ) : (
-                      <Button
-                        fullWidth
-                        variant="contained"
-                        onClick={() => handleAddItems(item.id)}
-                      >
-                        ADD
-                      </Button>
-                    )}
+                      {items.some((add) => add.id === item.id) ? (
+                        <Button
+                          fullWidth
+                          variant="contained"
+                          onClick={() => handleRemoveItem(item.id)}
+                        >
+                          REMOVE
+                        </Button>
+                      ) : (
+                        <Button
+                          fullWidth
+                          variant="contained"
+                          onClick={() => handleAddItems(item.id)}
+                        >
+                          ADD
+                        </Button>
+                      )}
+                    </Box>
 
                     <BoxButton>
                       <Button>

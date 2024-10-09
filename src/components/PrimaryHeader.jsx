@@ -18,14 +18,17 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CloseIcon from "@mui/icons-material/Close";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+
 import {
   SearchIconWrapper,
   Search,
   StyledInputBase,
 } from "../styledComponents/PrimaryHeader";
 import Drawer from "./Drawer";
+import MyAccount from "./MyAccount";
 
-export default function PrimaryHeader({ setSearched, state }) {
+export default function PrimaryHeader({ setSearched }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const selectorData = useSelector((state) => state?.data);
   const cartCount = useSelector((state) => state?.items);
@@ -79,8 +82,9 @@ export default function PrimaryHeader({ setSearched, state }) {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+        <MyAccount />
+      </MenuItem>
     </Menu>
   );
 
@@ -135,7 +139,6 @@ export default function PrimaryHeader({ setSearched, state }) {
   };
 
   const openFavoriteItems = () => {
-    console.log(favoriteItem, "favoriteItem");
     if (favoriteItem.length > 0) {
       navigate("/Favorite");
     }
@@ -159,9 +162,9 @@ export default function PrimaryHeader({ setSearched, state }) {
             }}
           >
             <img
-              height={"45px"}
-              width={"45px"}
-              src="favicon/Fusion-shop.png"
+              height={"50px"}
+              width={"50px"}
+              src="favicon/FusionWorld_Logo.png"
               alt="logo"
             />
           </Box>
@@ -184,22 +187,6 @@ export default function PrimaryHeader({ setSearched, state }) {
           >
             {isDrawerOpen ? <CloseIcon /> : <MenuIcon />}
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            onClick={() => navigate("/")}
-            sx={{
-              display: {
-                xs: "none",
-                sm: "block",
-                marginRight: "20px",
-                cursor: "pointer",
-              },
-            }}
-          >
-            Home
-          </Typography>
           <Box
             sx={{
               display: { xs: "flex", gap: "16px" },
@@ -207,18 +194,41 @@ export default function PrimaryHeader({ setSearched, state }) {
               alignItems: "center",
             }}
           >
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
+            <Box
+              onClick={() => navigate("/Dashboard")}
               sx={{
-                fontSize: { xs: "20px", md: "25px", lg: "30px" },
-                fontStyle: "italic",
-                fontWeight: "600",
+                display: "flex",
+                flexDirection: "column",
+                cursor: "pointer",
               }}
             >
-              FusionShop
-            </Typography>
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{
+                  fontSize: { xs: "20px", md: "24px", lg: "28px" },
+                  fontStyle: "italic",
+                  fontWeight: "600",
+                  lineHeight: "normal",
+                }}
+              >
+                FusionWorld
+              </Typography>
+              <Typography
+                variant="caption"
+                sx={{
+                  fontStyle: "italic",
+                  color: "#f7ba02",
+                  marginLeft: "10px",
+                  lineHeight: "normal",
+                  fontSize: { xs: "12px", md: "15px", lg: "18px" },
+                }}
+              >
+                Explore <strong>Plus</strong>
+                <StarBorderIcon sx={{ fontSize: "15px" }} />
+              </Typography>
+            </Box>
             <Search
               sx={{
                 width: { xs: "50%", md: "30%", lg: "50%" },
@@ -237,55 +247,66 @@ export default function PrimaryHeader({ setSearched, state }) {
             </Search>
           </Box>
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge
-                onClick={() => navigate(`/favorite`)}
-                badgeContent={state?.length}
-                color="error"
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              gap: "10px",
+            }}
+          >
+            <Tooltip title="Favorite" onClick={openFavoriteItems}>
+              <IconButton
+                size="large"
+                color="inherit"
+                sx={{ gap: "15px", ":hover": { borderRadius: "0px" } }}
               >
-                <Tooltip title="Favorite">
-                  <FavoriteIcon
-                    sx={{ width: "25px" }}
-                    onClick={openFavoriteItems}
-                  />
-                </Tooltip>
-              </Badge>
-            </IconButton>
-            <IconButton size="large" color="inherit">
-              <Badge badgeContent={cartCount?.length} color="error">
-                <Tooltip title="Shoping Cart">
-                  <ShoppingCartIcon
-                    onClick={openCardMenu}
-                    sx={{ width: "25px" }}
-                  />
-                </Tooltip>
-              </Badge>
-            </IconButton>
+                <Badge badgeContent={favoriteItem?.length} color="secondary">
+                  <FavoriteIcon sx={{ width: "25px" }} />
+                </Badge>
+                <Typography sx={{ fontSize: "20px" }}>Favorite</Typography>
+              </IconButton>
+            </Tooltip>
 
-            <IconButton size="large" color="inherit">
-              <Badge badgeContent={11} color="error">
-                <Tooltip title="Notification">
+            <Tooltip title="Shoping Cart" onClick={openCardMenu}>
+              <IconButton
+                size="large"
+                color="inherit"
+                sx={{ gap: "15px", ":hover": { borderRadius: "0px" } }}
+              >
+                <Badge badgeContent={cartCount?.length} color="secondary">
+                  <ShoppingCartIcon sx={{ width: "25px" }} />
+                </Badge>
+                <Typography sx={{ fontSize: "20px" }}>Cart</Typography>
+              </IconButton>
+            </Tooltip>
+
+            <Tooltip title="Notification">
+              <IconButton
+                size="large"
+                color="inherit"
+                sx={{ gap: "15px", ":hover": { borderRadius: "0px" } }}
+              >
+                <Badge badgeContent={11} color="secondary">
                   <NotificationsIcon sx={{ width: "25px" }} />
-                </Tooltip>
-              </Badge>
-            </IconButton>
+                </Badge>
+                <Typography sx={{ fontSize: "20px" }}>Notification</Typography>
+              </IconButton>
+            </Tooltip>
 
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle sx={{ width: "25px" }} />
-            </IconButton>
+            <Tooltip title="Account">
+              <IconButton
+                sx={{ gap: "15px", ":hover": { borderRadius: "0px" } }}
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={handleProfileMenuOpen}
+                color="inherit"
+              >
+                <AccountCircle sx={{ width: "25px" }} />
+                <Typography sx={{ fontSize: "20px" }}>Account</Typography>
+              </IconButton>
+            </Tooltip>
           </Box>
         </Toolbar>
       </AppBar>
@@ -296,7 +317,6 @@ export default function PrimaryHeader({ setSearched, state }) {
           <Drawer
             isDrawerOpen={isDrawerOpen}
             badgeContent={cartCount?.length}
-            favContent={state?.length}
           />
         ) : null}
       </Box>

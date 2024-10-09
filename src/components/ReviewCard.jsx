@@ -30,6 +30,8 @@ import {
 import PriceDetails from "./PriceDetails";
 
 export default function ReviewCard({ theme }) {
+  const dispatch = useDispatch();
+
   const [state, setState] = useState([]);
   const [data, setData] = useState([]);
   const cartItem = useSelector((state) => state?.items); // Get cart items from Redux store
@@ -37,8 +39,6 @@ export default function ReviewCard({ theme }) {
   const maxQuantity = 5; // Maximum quantity allowed
   const [totalPrice, setTotalPrice] = useState(0);
   const [open, setOpen] = useState(false);
-
-  const dispatch = useDispatch();
 
   // Save cart items to localStorage
   useEffect(() => {
@@ -185,9 +185,9 @@ export default function ReviewCard({ theme }) {
                     data-aos="fade-up"
                     sx={{
                       maxWidth: 900,
+                      marginTop: "50px",
                       boxShadow:
                         "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-
                       background: theme ? "#39393D" : "#fff",
                       color: theme ? "#fff" : "#39393D",
                     }}
@@ -323,7 +323,7 @@ export default function ReviewCard({ theme }) {
         </Box>
         {open && data?.length > 0 && (
           <Box sx={{ width: "50%", display: "flex", justifyContent: "end" }}>
-            <PriceDetails totalPrice={totalPrice} />
+            <PriceDetails totalPrice={totalPrice} theme={theme} />
           </Box>
         )}
       </BoxContainer>

@@ -9,40 +9,56 @@ import CopyrightIcon from "@mui/icons-material/Copyright";
 import "../styledComponents/MainFooter.css";
 
 const MainFooter = () => {
+  const handleLinkedInIcon = () => {
+    window.location.href = "https://www.linkedin.com/in/aasifias2810";
+  };
+
+  const handleFacebookIcon = () => {
+    alert("Facebook");
+  };
+
+  const handleTwitterIcon = () => {
+    alert("Twitter");
+  };
+
+  const handleInstagramIcon = () => {
+    alert("Instagram");
+  };
+
   return (
     <Box className="main-box">
       <Box className="shop-now-text">
         <ShoppingCartIcon sx={{ fontSize: "40px" }} />
         <Typography sx={{ fontWeight: "600" }} variant="h5">
-          FusionShop
+          FusionWorld
         </Typography>
       </Box>
       <Box className="wrap-box" sx={{ gap: { xs: "25px", lg: "50px" } }}>
         <LinkedInIcon
           className="icon-style"
           sx={{ fontSize: "30px", padding: "4px" }}
-          onClick={() => alert("Linked")}
+          onClick={handleLinkedInIcon}
         />
         <InstagramIcon
           className="icon-style"
           sx={{ fontSize: "30px", padding: "4px" }}
-          onClick={() => alert("Instagram")}
+          onClick={handleInstagramIcon}
         />
         <FacebookIcon
           className="icon-style"
           sx={{ fontSize: "30px", padding: "4px" }}
-          onClick={() => alert("Facebook")}
+          onClick={handleFacebookIcon}
         />
         <TwitterIcon
           className="icon-style"
           sx={{ fontSize: "30px", padding: "4px" }}
-          onClick={() => alert("Twitter")}
+          onClick={handleTwitterIcon}
         />
       </Box>
       <Box className="text-box">
-        <CopyrightIcon sx={{ fontSize: { xs: "20px", lg: "20px" } }} />
+        <CopyrightIcon sx={{ fontSize: { xs: "18px", lg: "18px" } }} />
         <Typography variant="h6" sx={{ fontSize: { xs: "16px" } }}>
-          2024 FusionShop. All Rights Reserved.
+          {new Date().getFullYear()} <b>FusionWorld.</b> All Rights Reserved.
         </Typography>
       </Box>
       <Box

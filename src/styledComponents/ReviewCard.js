@@ -5,7 +5,7 @@ export const CardContainer = styled(Box)({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  gap: "30px",
+  // gap: "30px",
 });
 
 export const CardContents = styled(CardContent)({

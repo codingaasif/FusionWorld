@@ -8,21 +8,23 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { useNavigate } from "react-router";
 import HelpIcon from "@mui/icons-material/Help";
 import CircleNotificationsIcon from "@mui/icons-material/CircleNotifications";
+import { useSelector } from "react-redux";
 
-export default function Drawer({ badgeContent, favContent }) {
-  console.log(favContent, "favContent");
-  console.log(badgeContent, "badgeContent");
-
+export default function Drawer({ badgeContent }) {
   const navigate = useNavigate();
+  const userName = JSON.parse(localStorage.getItem("userData"));
+  const favoriteItem = useSelector((state) => state?.favoriteItem);
+
   const DrawerContainer = styled("Box")({
     width: "250px",
     height: "300px",
-    top: "115px",
-    background: "#fff",
-    padding: "15px 0 15px 0",
+    top: "55px",
+    background: "#1976d2",
+    color: "#fff",
+    padding: "10px 0 10px 0",
     position: "fixed",
     borderRadius: "0 5px 5px 0 ",
-    zIndex: 999,
+    zIndex: 9999999,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -43,17 +45,24 @@ export default function Drawer({ badgeContent, favContent }) {
   });
 
   const handleMyCart = () => {
-    console.log("clicked My Cart");
     if (badgeContent > 0) {
       navigate("/ReviewCard");
     }
   };
 
   const handleWishList = () => {
-    console.log("clicked WishList");
-    if (favContent > 0) {
+    if (favoriteItem.length > 0) {
       navigate("/Favorite");
     }
+  };
+
+  const handleHelpSupport = () => {
+    navigate("/HelpSupport");
+  };
+
+  const handleLogOutPage = () => {
+    // localStorage.removeItem("userData");
+    navigate("/");
   };
 
   return (
@@ -61,35 +70,34 @@ export default function Drawer({ badgeContent, favContent }) {
       <DrawerBox>
         <DrawerCart>
           <AccountCircleIcon sx={{ fontSize: "30px" }} />
-          <Typography>My Account</Typography>
+          <Typography>
+            Hey! {userName.firstName} {userName.lastName}
+          </Typography>
         </DrawerCart>
         <DrawerCart onClick={handleMyCart}>
-          <Badge badgeContent={badgeContent} color="error">
+          <Badge badgeContent={badgeContent} color="secondary">
             <ShoppingCartIcon sx={{ fontSize: "30px" }} />
           </Badge>
           <Typography>My Orders</Typography>
         </DrawerCart>
         <DrawerCart onClick={handleWishList}>
-          <Badge badgeContent={favContent} color="error">
+          <Badge badgeContent={favoriteItem.length} color="secondary">
             <FavoriteIcon sx={{ fontSize: "30px" }} />
           </Badge>
           <Typography>My Wishlists</Typography>
         </DrawerCart>
-        <DrawerCart>
+        <DrawerCart onClick={handleHelpSupport}>
           <HelpIcon sx={{ fontSize: "30px" }} />
           <Typography>Help & Support</Typography>
         </DrawerCart>
         <DrawerCart>
-          <Badge badgeContent={11} color="error" onClick={handleWishList}>
+          <Badge badgeContent={11} color="secondary" onClick={handleWishList}>
             <CircleNotificationsIcon sx={{ fontSize: "30px" }} />
           </Badge>
           <Typography>Notifications</Typography>
         </DrawerCart>
-        <DrawerCart onClick={() => alert("Logout")}>
-          <LogoutIcon
-            sx={{ fontSize: "30px" }}
-            onClick={() => alert("Logout")}
-          />
+        <DrawerCart onClick={handleLogOutPage}>
+          <LogoutIcon sx={{ fontSize: "30px" }} />
           <Typography>Logout</Typography>
         </DrawerCart>
       </DrawerBox>
